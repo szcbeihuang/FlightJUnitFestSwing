@@ -38,6 +38,7 @@ public class HInputFlightTest {
 		 *   可以跳到catch(Exception e)里面。
 		 *注意：其它输入项必须正确，否则，如何测试ValidSeat
 		 */
+
 		jfDlg.textBox("txtIDFest").setText("93687");
 		jfDlg.textBox("txtFnameFest").setText("YE4002");
 		jfDlg.textBox("txtCompanyFest").setText("Hguohang");
