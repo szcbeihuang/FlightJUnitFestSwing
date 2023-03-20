@@ -38,11 +38,11 @@ public class HInputFlightTest {
 		 *   可以跳到catch(Exception e)里面。
 		 *注意：其它输入项必须正确，否则，如何测试ValidSeat
 		 */
-//		jfDlg.textBox("txtIDFest").setText("93687");
-//		jfDlg.textBox("txtFnameFest").setText("YE4002");
-//		jfDlg.textBox("txtCompanyFest").setText("Hguohang");
-//		jfDlg.textBox("txtPriceFest").setText("800.5");
-//		jfDlg.textBox("txtSeatFest").setText("126.0");
+		jfDlg.textBox("txtIDFest").setText("93687");
+		jfDlg.textBox("txtFnameFest").setText("YE4002");
+		jfDlg.textBox("txtCompanyFest").setText("Hguohang");
+		jfDlg.textBox("txtPriceFest").setText("800.5");
+		jfDlg.textBox("txtSeatFest").setText("126.0");
 		setValues("93687","YE4002","Hguohang","800.5","126.0");
 		jfDlg.button("btnOKFest").click();
 		assertEquals(false,hif.GetValidFlight());
