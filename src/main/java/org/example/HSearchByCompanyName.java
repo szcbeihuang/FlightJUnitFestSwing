@@ -44,12 +44,14 @@ public class HSearchByCompanyName extends JDialog implements ActionListener
 		//航空公司名称
 		JLabel lblPrice1 = new JLabel("航空公司名称:");
 		txtCompanyName = new JTextField(10);
+		txtCompanyName.setName("txtCompanyName");
 		txtCompanyName.setEditable(true);
 		con.add(lblPrice1);
 		con.add(txtCompanyName);
 
 		//setModalityType(false);
 		JButton btnSearch = new JButton(strSearch);
+		btnSearch.setName("btnSearch");
 		btnSearch.addActionListener(this);
 		JButton btnCancel = new JButton(strCancel);
 		btnCancel.addActionListener(this);
