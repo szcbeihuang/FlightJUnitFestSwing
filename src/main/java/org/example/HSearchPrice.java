@@ -48,12 +48,14 @@ public class HSearchPrice extends JDialog implements ActionListener
 		//小的那个票价
 		JLabel lblPrice1 = new JLabel("机票价格处于:");
 		txtMinPrice = new JTextField(8);
+		txtMinPrice.setName("txtMinPrice");
 		txtMinPrice.setEditable(true);
 		con.add(lblPrice1);
 		con.add(txtMinPrice);
 		//大的那个票价
 		JLabel lblPrice2 = new JLabel("和:");
 		txtMaxPrice = new JTextField(10);
+		txtMaxPrice.setName("txtMaxPrice");
 		txtMaxPrice.setEditable(true);
 		con.add(lblPrice2);
 		con.add(txtMaxPrice);
@@ -73,6 +75,7 @@ public class HSearchPrice extends JDialog implements ActionListener
 
 		//setModalityType(false);
 		JButton btnSearch = new JButton(strSearch);
+		btnSearch.setName("btnOKFest");
 		btnSearch.addActionListener(this);
 		JButton btnCancel = new JButton(strCancel);
 		btnCancel.addActionListener(this);

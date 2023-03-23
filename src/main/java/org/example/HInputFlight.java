@@ -111,9 +111,10 @@ public class HInputFlight extends JDialog implements ActionListener{
 			else
 			{
 				setVisible(false);
-				bDoOK = true;
 				dispose();
-				//System.out.println("确定");
+				bDoOK = true;
+//				dispose();
+//				System.out.println("确定");
 			}
 		}
 		else if( e.getActionCommand()=="取消")
@@ -231,8 +232,8 @@ public class HInputFlight extends JDialog implements ActionListener{
 		}
 		if( (true==flag) && (price>=100.0f) && (price<=1800.0f) )
 			flag = true;
-//		else
-//			flag = false;
+		else
+			flag = false;
 		return flag;
 	}
 

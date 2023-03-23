@@ -24,7 +24,6 @@ public class HInputFlightTest {
 		jfDlg.cleanUp();
 	}
 
-	@Test
 	public void test() {
 		fail("Not yet implemented");
 	}
@@ -33,57 +32,45 @@ public class HInputFlightTest {
 	//使用的测试技术：条件覆盖
 	@Test
 	public void testSeatForAddFlight() {
-		/*第一个测试用例，测试：座位数不能有0-9以外的字符，也就是
-		 *   在方法private boolean ValidSeat()内
-		 *   可以跳到catch(Exception e)里面。
-		 *注意：其它输入项必须正确，否则，如何测试ValidSeat
-		 */
-
-		jfDlg.textBox("txtIDFest").setText("93687");
-		jfDlg.textBox("txtFnameFest").setText("YE4002");
-		jfDlg.textBox("txtCompanyFest").setText("Hguohang");
-		jfDlg.textBox("txtPriceFest").setText("800.5");
-		jfDlg.textBox("txtSeatFest").setText("126.0");
 		setValues("93687","YE4002","Hguohang","800.5","126.0");
-		jfDlg.button("btnOKFest").click();
 		assertEquals(false,hif.GetValidFlight());
-		/*第二个测试用例，测试：座位数不能小于100。
-		 *注意：其它输入项必须正确，否则，如何测试ValidSeat
-		 */
-		jfDlg.textBox("txtIDFest").setText("93687");
-		jfDlg.textBox("txtFnameFest").setText("YE4002");
-		jfDlg.textBox("txtCompanyFest").setText("Hguohang");
-		jfDlg.textBox("txtPriceFest").setText("800.5");
-		jfDlg.textBox("txtSeatFest").setText("98");
-		jfDlg.button("btnOKFest").click();
+	}
+	@Test
+	public void testSeatForAddFlight2() {
+		setValues("93687","YE4002","Hguohang","800.5","98");
 		assertEquals(false,hif.GetValidFlight());
-		/*第三个测试用例，测试：座位数不能大于100。
-		 *注意：其它输入项必须正确，否则，如何测试ValidSeat
-		 */
-		jfDlg.textBox("txtIDFest").setText("93687");
-		jfDlg.textBox("txtFnameFest").setText("YE4002");
-		jfDlg.textBox("txtCompanyFest").setText("Hguohang");
-		jfDlg.textBox("txtPriceFest").setText("800.5");
-		jfDlg.textBox("txtSeatFest").setText("298");
-		jfDlg.button("btnOKFest").click();
+	}
+	@Test
+	public void testSeatForAddFlight3() {
+		setValues("93687","YE4002","Hguohang","800.5","298");
 		assertEquals(false,hif.GetValidFlight());
-		/*第四个测试用例，测试：座位数不能大于100。
-		 *注意：其它输入项必须正确，否则，如何测试ValidSeat
-		 */
-		jfDlg.textBox("txtIDFest").setText("93687");
-		jfDlg.textBox("txtFnameFest").setText("YE4002");
-		jfDlg.textBox("txtCompanyFest").setText("Hguohang");
-		jfDlg.textBox("txtPriceFest").setText("800.5");
-		jfDlg.textBox("txtSeatFest").setText("128");
-		jfDlg.button("btnOKFest").click();
+	}
+	@Test
+	public void testSeatForAddFlight4() {
+		setValues("93687","YE4002","Hguohang","800.5","128");
 		assertEquals(true,hif.GetValidFlight());
 	}
-
+	@Test
+	public void testCompanyForAddFlight() {
+		setValues("93687","YE4002","H1","800.5","128");
+		assertEquals(false,hif.GetValidFlight());
+	}
+	@Test
+	public void testCompanyForAddFlight2() {
+		setValues("93687","YE4002","@guohangsfsdfsdfewffsesfdefssfwedwe","800.5","128");
+		assertEquals(false,hif.GetValidFlight());
+	}
+	@Test
+	public void testCompanyForAddFlight3() {
+		setValues("93687","YE4002","H111111","800.5","128");
+		assertEquals(true,hif.GetValidFlight());
+	}
 	public void setValues(String id, String name, String company, String price, String seat) {
 		jfDlg.textBox("txtIDFest").setText(id);
 		jfDlg.textBox("txtFnameFest").setText(name);
 		jfDlg.textBox("txtCompanyFest").setText(company);
 		jfDlg.textBox("txtPriceFest").setText(price);
 		jfDlg.textBox("txtSeatFest").setText(seat);
+		jfDlg.button("btnOKFest").click();
 	}
 }

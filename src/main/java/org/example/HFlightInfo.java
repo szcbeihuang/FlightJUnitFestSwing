@@ -32,12 +32,6 @@ public class HFlightInfo {
 		setfPrice(price);
 		setSeat(seat);
 	}
-	public void setValues(String id, String name, String company, float price) {
-		jfDlg.textBox("txtIDFest").setText(id);
-		jfDlg.textBox("txtFnameFest").setText(name);
-		jfDlg.textBox("txtCompanyFest").setText(company);
-		jfDlg.textBox("txtPriceFest").setText(Float.toString(price));
-	}
 	//获取航空公司名称
 	public String getStrCompany() {
 		return m_strCompany;
