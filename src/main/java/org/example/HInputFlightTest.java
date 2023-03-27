@@ -51,6 +51,26 @@ public class HInputFlightTest {
 		assertEquals(true,hif.GetValidFlight());
 	}
 	@Test
+	public void testSeatForAddFlight5() {
+		setValues("93687","YE4002","Hguohang","kk","128");
+		assertEquals(false,hif.GetValidFlight());
+	}
+	@Test
+	public void testSeatForAddFlight6() {
+		setValues("93687","YE4002","Hguohang","1","128");
+		assertEquals(false,hif.GetValidFlight());
+	}
+	@Test
+	public void testSeatForAddFlight7() {
+		setValues("93687","YE4002","Hguohang","18800","128");
+		assertEquals(false,hif.GetValidFlight());
+	}
+	@Test
+	public void testSeatForAddFlight8() {
+		setValues("93687","YE4002","Hguohang","800.5","128");
+		assertEquals(true,hif.GetValidFlight());
+	}
+	@Test
 	public void testCompanyForAddFlight() {
 		setValues("93687","YE4002","H1","800.5","128");
 		assertEquals(false,hif.GetValidFlight());
